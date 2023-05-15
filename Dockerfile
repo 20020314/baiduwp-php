@@ -9,7 +9,7 @@ WORKDIR /var/www/html
 
 # Clone the repository
 RUN rm -rf /var/www/html/* && \
-    git clone https://github.com/yuantuo666/baiduwp-php.git /tmp/baiduwp-php && \
+    git clone https://github.com/20020314/baiduwp-php.git /tmp/baiduwp-php && \
     cp -r /tmp/baiduwp-php/* /var/www/html/ && \
     rm -rf /tmp/baiduwp-php
 
