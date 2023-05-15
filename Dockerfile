@@ -7,14 +7,11 @@ RUN apt-get update && \
 
 WORKDIR /var/www/html
 
-# Clone the repository
-RUN rm -rf /var/www/html/* && \
-    git clone https://github.com/20020314/baiduwp-php.git /tmp/baiduwp-php && \
-    cp -r /tmp/baiduwp-php/* /var/www/html/ && \
-    rm -rf /tmp/baiduwp-php
+# Copy the local repository
+COPY . /var/www/html/
 
-# 配置 Apache 服务器
+# 配置 Apache 服务器
 RUN a2enmod rewrite
 
-# 将容器的80端口暴露出来
+# 将容器的80端口暴露出来
 EXPOSE 80
